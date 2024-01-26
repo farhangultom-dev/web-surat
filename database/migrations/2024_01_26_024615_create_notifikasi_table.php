@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('notifikasi', function (Blueprint $table) {
             $table->id();
-            $table->string('nik')->nullable();
+            $table->foreignId('id_user');
             $table->longText('pesan')->nullable();
             $table->boolean('is_read')->default(false);
             $table->softDeletes();

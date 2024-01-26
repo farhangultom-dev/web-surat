@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('antrian', function (Blueprint $table) {
             $table->id();
-            $table->string('nik')->nullable();
+            $table->foreignId('id_user');
             $table->foreignId('id_pengajuan_surat');
             $table->softDeletes();
             $table->timestamps();
