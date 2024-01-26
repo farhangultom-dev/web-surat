@@ -6,7 +6,8 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <x-application-mark class="block h-9 w-auto" />
+                        <img class="block h-9 w-auto" src="https://bangkajaya.sigapaceh.id/assets/img/kab_acehutara.png" alt="Desa Bangka Jaya">
+                        <!-- <x-application-mark class="block h-9 w-auto" /> -->
                     </a>
                 </div>
 
