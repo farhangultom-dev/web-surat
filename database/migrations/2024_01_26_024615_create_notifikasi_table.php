@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('notifikasi', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_user');
+            $table->foreignId('user_id')->nullable()
+            ->index('fk_notifikasi_to_users');
             $table->longText('pesan')->nullable();
             $table->boolean('is_read')->default(false);
             $table->softDeletes();

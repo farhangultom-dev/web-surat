@@ -11,13 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('antrian', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id')->nullable()
-            ->index('fk_antrian_to_users');
-            $table->foreignId('id_pengajuan_surat')->nullable();
-            $table->softDeletes();
-            $table->timestamps();
+        Schema::table('notifikasi', function (Blueprint $table) {
+            $table->foreign('user_id', 'fk_notifikasi_to_users')->references('id')
+            ->on('users')->onUpdate('CASCADE')->onDelete('CASCADE');
         });
     }
 
@@ -26,6 +22,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('antrian');
+        Schema::table('notifikasi', function (Blueprint $table) {
+            $table->dropForeign('fk_notifikasi_to_users');
+        });
     }
 };
