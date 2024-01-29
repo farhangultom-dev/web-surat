@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('detail_user', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->nullable()
+            ->index('fk_detail_user_to_users');
             $table->timestamp('tanggal_lahir')->nullable();
             $table->longText('alamat')->nullable();
             $table->string('jenis_kelamin')->nullable();
