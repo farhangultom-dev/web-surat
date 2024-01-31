@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('jenis_kelamin')->nullable();
             $table->integer('nomor_telpon')->nullable();
             $table->tinyInteger('role')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

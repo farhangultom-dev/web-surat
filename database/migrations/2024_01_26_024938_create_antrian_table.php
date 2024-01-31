@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->nullable()
             ->index('fk_antrian_to_users');
             $table->foreignId('id_pengajuan_surat')->nullable();
+            $table->integer('no_antrian')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
