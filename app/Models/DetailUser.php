@@ -31,4 +31,9 @@ class DetailUser extends Model
         'created_at',
         'updated_at'
     ];
+
+    //one to one
+    public function user(){
+        return $this->belongsTo('App\Models\User','id');
+    }
 }

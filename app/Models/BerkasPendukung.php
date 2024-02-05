@@ -27,4 +27,9 @@ class BerkasPendukung extends Model
         'created_at',
         'updated_at'
     ];
+
+    //one to many
+    public function pengajuan_surat(){
+        return $this->hasMany('App\Models\PengajuanSurat', 'id_berkas_pendukung');
+    }
 }

@@ -30,4 +30,22 @@ class PengajuanSurat extends Model
         'created_at',
         'updated_at'
     ];
+
+    //one to one
+    public function antrian(){
+        return $this->hasOne('App\Models\Antrian','id_pengajuan_surat');
+    }
+
+    //one to many
+    public function user(){
+        return $this->belongsTo('App\Models\User','id');
+    }
+
+    public function berkas_pendukung(){
+        return $this->belongsTo('App\Models\BerkasPendukung','id');
+    }
+
+    public function layanan(){
+        return $this->belongsTo('App\Models\Layanan','id');
+    }
 }

@@ -70,4 +70,22 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    //one to one
+    public function detail_user(){
+        return $this->hasOne('App\Models\DetailUser', 'user_id');
+    }
+
+    //one to many
+    public function notifikasi(){
+        return $this->hasMany('App\Models\Notifikasi', 'user_id');
+    }
+
+    public function pengajuan_surat(){
+        return $this->hasMany('App\Models\PengajuanSurat', 'user_id');
+    }
+
+    public function antrian(){
+        return $this->hasMany('App\Models\Antrian', 'user_id');
+    }
 }

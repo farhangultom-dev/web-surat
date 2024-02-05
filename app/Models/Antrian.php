@@ -28,4 +28,14 @@ class Antrian extends Model
         'created_at',
         'updated_at'
     ];
+
+    //one to one
+    public function pengajuan_surat(){
+        return $this->belongsTo('App\Models\PengajuanSurat','id');
+    }
+
+    //one to many
+    public function user(){
+        return $this->belongsTo('App\Models\User','id');
+    }
 }

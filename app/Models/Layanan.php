@@ -27,4 +27,9 @@ class Layanan extends Model
         'created_at',
         'updated_at'
     ];
+
+    //one to many
+    public function pengajuan_surat(){
+        return $this->hasMany('App\Models\PengajuanSurat', 'layanan_id');
+    }
 }
