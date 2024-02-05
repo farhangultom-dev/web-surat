@@ -17,9 +17,6 @@ return new class extends Migration
 
             $table->foreign('layanan_id', 'fk_pengajuan_surat_to_layanan')->references('id')
             ->on('layanan')->onUpdate('CASCADE')->onDelete('CASCADE');
-
-            $table->foreign('id_berkas_pendukung', 'fk_pengajuan_surat_to_berkas_pendukung')->references('id')
-            ->on('berkas_pendukung')->onUpdate('CASCADE')->onDelete('CASCADE');
         });
     }
 
@@ -32,8 +29,6 @@ return new class extends Migration
             $table->dropForeign('fk_pengajuan_surat_to_users');
 
             $table->dropForeign('fk_pengajuan_surat_to_layanan');
-
-            $table->dropForeign('fk_pengajuan_surat_to_berkas_pendukung');
         });
     }
 };

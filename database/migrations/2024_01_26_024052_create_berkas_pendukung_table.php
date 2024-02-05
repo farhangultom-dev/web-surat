@@ -13,7 +13,10 @@ return new class extends Migration
     {
         Schema::create('berkas_pendukung', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('id_pengajuan_surat')->nullable()
+            ->index('fk_berkas_pendukung_to_pengajuan_surat');
             $table->string('nama_berkas')->nullable();
+            $table->string('url_berkas')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

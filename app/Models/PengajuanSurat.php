@@ -23,7 +23,6 @@ class PengajuanSurat extends Model
     protected $fillable = [
         'user_id',
         'layanan_id', 
-        'id_berkas_pendukung',
         'tanggal_pengajuan',
         'file_pendukung',
         'deleted_at',
@@ -37,12 +36,12 @@ class PengajuanSurat extends Model
     }
 
     //one to many
-    public function user(){
-        return $this->belongsTo('App\Models\User','id');
+    public function berkas_pendukung(){
+        return $this->hasMany('App\Models\BerkasPendukung','id_pengajuan_surat');
     }
 
-    public function berkas_pendukung(){
-        return $this->belongsTo('App\Models\BerkasPendukung','id');
+    public function user(){
+        return $this->belongsTo('App\Models\User','id');
     }
 
     public function layanan(){

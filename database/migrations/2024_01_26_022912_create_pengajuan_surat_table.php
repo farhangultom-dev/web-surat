@@ -17,8 +17,6 @@ return new class extends Migration
             ->index('fk_pengajuan_surat_to_users');
             $table->foreignId('layanan_id')->nullable()
             ->index('fk_pengajuan_surat_to_layanan');
-            $table->foreignId('id_berkas_pendukung')->nullable()
-            ->index('fk_pengajuan_surat_to_berkas_pendukung');
             $table->timestamp('tanggal_pengajuan')->nullable();
             $table->longText('file_pendukung')->nullable();
             $table->softDeletes();

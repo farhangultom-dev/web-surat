@@ -23,6 +23,8 @@ class BerkasPendukung extends Model
 
     protected $fillable = [
         'nama_berkas',
+        'id_pengajuan_surat',
+        'url_berkas',
         'deleted_at',
         'created_at',
         'updated_at'
@@ -30,6 +32,6 @@ class BerkasPendukung extends Model
 
     //one to many
     public function pengajuan_surat(){
-        return $this->hasMany('App\Models\PengajuanSurat', 'id_berkas_pendukung');
+        return $this->belongsTo('App\Models\PengajuanSurat', 'id');
     }
 }
