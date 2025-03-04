@@ -3,7 +3,7 @@
 <head>
     @include('includes.landing.meta')
 
-    <title>@yield('title') | DESA </title>
+    <title>@yield('title') | Desa Bangka Jaya</title>
 
     @stack('before-style')
 
@@ -17,7 +17,9 @@
         
         @include('includes.landing.header')
 
-            {{-- @include('sweetalert::alert') --}}
+            @include('sweetalert::alert')
+
+            <?php Session::forget('sweet_alert'); ?>
 
             @yield('content')
         

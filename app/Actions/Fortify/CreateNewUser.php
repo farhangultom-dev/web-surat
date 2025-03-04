@@ -25,9 +25,9 @@ class CreateNewUser implements CreatesNewUsers
         Validator::make($input, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => $this->passwordRules(),
+            // 'password' => $this->passwordRules(),
             'nik' => ['required', 'string','unique:users'],
-            'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['accepted', 'required'] : '',
+            // 'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['accepted', 'required'] : '',
         ])->validate();
 
         return DB::transaction(function () use ($input) {
@@ -36,6 +36,7 @@ class CreateNewUser implements CreatesNewUsers
                 'email' => $input['email'],
                 'nik' => $input['nik'],
                 'password' => Hash::make($input['password']),
+                'profile_photo_path' => "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
             ]), function (User $user) {
                 $this->createTeam($user);
 

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->nullable()
             ->index('fk_notifikasi_to_users');
             $table->longText('pesan')->nullable();
+            $table->longText('link_file');
             $table->boolean('is_read')->default(false);
             $table->softDeletes();
             $table->timestamps();

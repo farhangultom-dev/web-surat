@@ -24,7 +24,8 @@ class PengajuanSurat extends Model
         'user_id',
         'layanan_id', 
         'tanggal_pengajuan',
-        'file_pendukung',
+        'tanggal_selesai',
+        'status',
         'deleted_at',
         'created_at',
         'updated_at'

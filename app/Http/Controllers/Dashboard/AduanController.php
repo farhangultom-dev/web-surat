@@ -5,6 +5,11 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use Illumninate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
+
+use App\Models\Aduan;
+
 class AduanController extends Controller
 {
     /**
@@ -12,7 +17,8 @@ class AduanController extends Controller
      */
     public function index()
     {
-        //
+        $aduan = Aduan::all();
+        return view('pages.dashboard.aduan.index', compact('aduan'));
     }
 
     /**

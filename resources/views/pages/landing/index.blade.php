@@ -15,25 +15,37 @@
                     class="lg:flex-grow lg:w-1/2 flex flex-col lg:items-start lg:text-left mb-3 md:mb-12 lg:mb-0 items-center text-center">
                     <h1
                         class="text-black-1 lg:leading-normal sm:text-4xl lg:text-5xl text-3xl mb-5 font-semibold lg:mt-20">
-                        Finish Your Project With <br class="lg:block hidden">
-                        Ours Best Freelancers
+                        Buat Surat Secara Online <br class="lg:block hidden">
+                        Tanpa Harus Ke Kantor Desa
                     </h1>
                     <p class="text-lg leading-relaxed text-serv-text font-light tracking-wide mb-10 lg:mb-18 ">
-                        Find thousands of remote workers who have the best <br class="lg:block hidden">
-                        skills and experience to help you accomplishing <br class="lg:block hidden">
-                        your projects.
+                        Buat surat tanpa harus ngantri dan menunggu <br class="lg:block hidden">
+                        setelah jadi langsung ambil di<br class="lg:block hidden">
+                        Desa Bangka Jaya.
                     </p>
                     <div
                         class="md:flex contents items-center mx-auto lg:mx-0 lg:flex justify-center lg:space-x-8 md:space-x-2 space-x-0">
-                        <button class="bg-serv-button text-white text-lg font-semibold py-4 px-12 my-2 rounded-lg" onclick="toggleModal('registerModal')">
-                            Get Started
-                        </button>
+                        @auth
+                            {{-- <a href="{{ route('explore.pengajuan') }}" type="button" class="bg-serv-button text-white text-lg font-semibold py-4 px-12 my-2 rounded-lg">
+                                Mulai
+                            </a> --}}
+                        @endauth
+
+                        @guest
+                            <button class="bg-serv-button text-white text-lg font-semibold py-4 px-12 my-2 rounded-lg" onclick="toggleModal('registerModal')">
+                                Mulai
+                            </button>
+                        @endguest
+                       
                     </div>
                 </div>
                 <!-- Right Column -->
                 <div class="w-full lg:w-1/2 text-center lg:justify-start justify-center flex pr-0">
-                    <img class="bottom-0 lg:block lg:right-24 md:right-16 sm:right-8 right-8 w-75"
-                        src="{{ asset('/assets/hero-image.png') }}" alt="" />
+                    <img class="bottom-0 lg:block lg:right-24 md:right-16 sm:right-8 right-8 w-75 rounded-xl"
+                        src="{{ url('https://firebasestorage.googleapis.com/v0/b/lbsaccidentprone.appspot.com/o/logo%20web%20surat.jpg?alt=media&token=b2215ac4-2644-4920-b066-2254a9c47950') }}" alt="" />
+
+                    {{-- <img class="bottom-0 lg:block lg:right-24 md:right-16 sm:right-8 right-8 w-75"
+                        src="{{ asset('/assets/hero-image.png') }}" alt="" /> --}}
                 </div>
             </div>
             <div class="lg:mb-20 mb-10 flex sm:space-x-4 space-x-1">
@@ -63,17 +75,13 @@
             <div class="pt-16 pb-16 lg:pb-20 lg:pl-24 md:pl-16 sm:pl-8 pl-8 mx-auto">
                 <div class="flex flex-col w-full">
                     <h2 class="sm:text-2xl text-xl tracking-wider font-semibold mb-5 text-medium-black">
-                        Featured Services</h2>
+                        Bentuk Pelayanan Birokrasi </h2>
                 </div>
                 <div class="flex overflow-x-scroll pb-10 hide-scroll-bar dragscroll -mx-3">
                     <div class="flex flex-nowrap">
-                        @include('components.landing.layanan')
-                        @include('components.landing.layanan')
-                        @include('components.landing.layanan')
-                        @include('components.landing.layanan')
-                        @include('components.landing.layanan')
-                        @include('components.landing.layanan')
-                        @include('components.landing.layanan')
+                        @foreach ($layanan as $item)
+                            @include('components.landing.layanan')
+                        @endforeach
                     </div>
 
                 </div>
@@ -91,18 +99,13 @@
             <!-- Right Column -->
             <div class="lg:w-1/2 w-full flex flex-col lg:items-start items-center lg:text-left text-center">
                 <h2 class="md:text-4xl text-3xl font-semibold mb-10 lg:leading-normal text-medium-black">
-                    Increase Productivity. <br>
-                    Save Your Time & Budget.
+                    Tingkatkan produktivitas <br>
+                    Hemat waktu dalam mengurus birokrasi Pemerintah.
                 </h2>
-                <p class="text-lg leading-relaxed text-serv-text font-light mb-10 lg:mb-18">
-                    Find thousands of skilled and experienced <br class="lg:block hidden">
-                    remote workers to help you accomplishing <br class="lg:block hidden">
-                    your projects. 
-                </p>
                 <a
                     href="explore.php"
                     class="bg-serv-button px-10 py-4 text-base text-white font-semibold rounded-xl cursor-pointer focus:outline-none tracking-wide">
-                    Learn More
+                    Pelajari
                 </a>
             </div>
         </div>

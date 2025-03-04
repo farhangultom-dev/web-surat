@@ -1285,6 +1285,10 @@ select{
 	--tw-bg-opacity: 1;
 	background-color: rgba(221, 255, 243, var(--tw-bg-opacity));
 }
+.bg-serv-red-badge{
+	--tw-bg-opacity: 1;
+	background-color: rgba(255, 0, 0, var(--tw-bg-opacity));
+}
 .bg-serv-email{
 	--tw-bg-opacity: 1;
 	background-color: rgba(11, 45, 61, var(--tw-bg-opacity));

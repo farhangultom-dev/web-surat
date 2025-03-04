@@ -23,6 +23,8 @@ class Layanan extends Model
 
     protected $fillable = [
         'nama_layanan',
+        'perkiraan_selesai',
+        'photos',
         'deleted_at',
         'created_at',
         'updated_at'
@@ -31,5 +33,10 @@ class Layanan extends Model
     //one to many
     public function pengajuan_surat(){
         return $this->hasMany('App\Models\PengajuanSurat', 'layanan_id');
+    }
+
+    // one to many
+    public function persyaratan(){
+        return $this->hasMany('App\Models\Persyaratan','layanan_id');
     }
 }

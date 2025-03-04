@@ -18,7 +18,8 @@ return new class extends Migration
             $table->foreignId('layanan_id')->nullable()
             ->index('fk_pengajuan_surat_to_layanan');
             $table->timestamp('tanggal_pengajuan')->nullable();
-            $table->longText('file_pendukung')->nullable();
+            $table->timestamp('tanggal_selesai')->nullable();
+            $table->integer('status');
             $table->softDeletes();
             $table->timestamps();
         });

@@ -26,10 +26,10 @@
                     <label class="block text-grey-darker text-sm mb-2" for="name">
                         Nama
                     </label>
-                    <input class="appearance-none border border-gray-300 rounded-lg w-full py-3 px-4 placeholder-serv-text text-xs" id="nama" type="text" placeholder="Masukkan nama" required>
+                    <input class="appearance-none border border-gray-300 rounded-lg w-full py-3 px-4 placeholder-serv-text text-xs" id="name" name="name" type="text" placeholder="Masukkan nama" required>
 
-                    @if ($errors->has('nama'))
-                        <p class="text-red-500 mb-3 text-sm">{{ $errors->first('nama') }}</p>
+                    @if ($errors->has('name'))
+                        <p class="text-red-500 mb-3 text-sm">{{ $errors->first('name') }}</p>
                     @endif
 
                 </div>
@@ -38,7 +38,7 @@
                     <label class="block text-grey-darker text-sm mb-2" for="nik">
                         NIK
                     </label>
-                    <input class="appearance-none border border-gray-300 rounded-lg w-full py-3 px-4 placeholder-serv-text text-xs" id="nik" type="text" placeholder="Masukkan NIK" required>
+                    <input class="appearance-none border border-gray-300 rounded-lg w-full py-3 px-4 placeholder-serv-text text-xs" id="nik" name="nik" type="text" placeholder="Masukkan NIK" required>
 
                     @if ($errors->has('nik'))
                         <p class="text-red-500 mb-3 text-sm">{{ $errors->first('nik') }}</p>
@@ -49,7 +49,7 @@
                     <label class="block text-grey-darker text-sm mb-2" for="email">
                         Email
                     </label>
-                    <input class="appearance-none border border-gray-300 rounded-lg w-full py-3 px-4 placeholder-serv-text text-xs" id="email" type="email" placeholder="nama@domain.com" required>
+                    <input class="appearance-none border border-gray-300 rounded-lg w-full py-3 px-4 placeholder-serv-text text-xs" id="email" name="email" type="email" placeholder="nama@domain.com" required>
 
                     @if ($errors->has('email'))
                         <p class="text-red-500 mb-3 text-sm">{{ $errors->first('email') }}</p>
@@ -60,7 +60,7 @@
                     <label class="block text-grey-darker text-sm mb-2" for="password">
                         Password
                     </label>
-                    <input class="appearance-none border border-gray-300 rounded-lg w-full py-3 px-4 placeholder-serv-text text-xs mb-3" id="password" type="password" placeholder="Minimal 8 karakter" required>
+                    <input class="appearance-none border border-gray-300 rounded-lg w-full py-3 px-4 placeholder-serv-text text-xs mb-3" id="password" name="password" type="password" placeholder="Minimal 8 karakter" required>
 
                     @if ($errors->has('password'))
                         <p class="text-red-500 mb-3 text-sm">{{ $errors->first('password') }}</p>
